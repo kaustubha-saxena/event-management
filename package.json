@@ -1,0 +1,40 @@
+{
+  "name": "campusflow",
+  "version": "1.0.0",
+  "description": "Accessible campus event discovery, registration, and digital ticket platform",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "preview": "node server/preview.js",
+    "db:push": "supabase db push",
+    "test": "node --env-file-if-exists=.env --test tests/api.supabase.test.js tests/unit/config.test.js tests/unit/validation.test.js tests/unit/ticket-crypto.test.js tests/integration/supabase.integration.test.js",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "@undecaf/zbar-wasm": "^0.11.0",
+    "firebase-admin": "^14.1.0",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "qrcode": "^1.5.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "supertest": "^7.1.4",
+    "prettier": "^3.9.10"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

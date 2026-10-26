@@ -1,0 +1,25 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+test-results/
+playwright-report/
+.npm-cache/
+service-account*.json
+
+# Superseded generated artifacts from the original MySQL implementation
+report/api-test-output.txt
+report/ui-test-output.txt
+report/REPORT.html
+report/CampusFlow_Project_Report.pdf
+
+# Temporary local diagnostics
+.signin-check.mjs
+.env-shape.mjs
+.api-check.mjs
+.server-*.out
+.server-*.err
+.campusflow-server.out
+.campusflow-server.err

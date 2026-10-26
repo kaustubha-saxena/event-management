@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Find your people, learn something new, and make more of campus life."
+    />
+    <title>CampusFlow — Make campus yours</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script type="module" src="/js/campusflow.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="CampusFlow home"
+        ><span class="brand-mark" aria-hidden="true">c<span>f</span></span
+        >campus<span>flow</span
+        ><span class="brand-dot" aria-hidden="true">●</span></a
+      >
+      <nav aria-label="Main navigation">
+        <button class="nav-link active" data-view="explore" aria-current="page">
+          Explore events</button
+        ><button class="nav-link" data-view="bookings">My registrations</button
+        ><button class="nav-link" data-view="saved">Saved events</button
+        ><button class="nav-link" data-view="tickets" hidden>My tickets</button
+        ><button class="nav-link" data-view="manage" id="manage-nav" hidden>
+          Organizer
+        </button>
+      </nav>
+      <div id="account">
+        <button class="button dark" id="sign-in">
+          Sign in <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span> Good things
+            happen on campus
+          </p>
+          <h1>Less scrolling.<br />More <em>showing up.</em></h1>
+          <p class="hero-sub">
+            New skills. New friends. Your next favourite memory.<br />Find the
+            events that make campus feel like you.
+          </p>
+          <button class="button dark" id="explore-cta">
+            Find your next thing <span aria-hidden="true">↗</span>
+          </button>
+          <div class="hero-note">
+            <span class="avatar-stack" aria-hidden="true"
+              ><i>AK</i><i>JS</i><i>RM</i></span
+            ><span>A place for every kind of curious.</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-star">✳</div>
+          <div class="art-label">OUT OF YOUR FEED.<br />INTO YOUR ELEMENT.</div>
+          <div class="art-ticket">
+            <span>YOUR NEXT CHAPTER</span><strong>Starts here.</strong>
+            <div class="ticket-bottom">
+              <span>ADMIT ONE<br />YOU + POSSIBILITY</span><b>↗</b>
+            </div>
+          </div>
+          <div class="art-sticker">meet. make.<br />belong.</div>
+          <div class="little-cross">+</div>
+        </div>
+      </section>
+      <section class="content-section" aria-labelledby="section-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="section-kicker">Your campus, your plans</p>
+            <h2 id="section-title">
+              Find your next thing<span class="green-text">.</span>
+            </h2>
+          </div>
+          <div class="heading-right">
+            <span id="result-count" aria-live="polite"></span
+            ><button class="button dark" id="create-event" hidden>
+              + Create event
+            </button>
+          </div>
+        </div>
+        <form id="filters" class="filters" role="search">
+          <div class="search-field">
+            <label for="search">Search events</label>
+            <div>
+              <span aria-hidden="true">⌕</span
+              ><input
+                id="search"
+                name="q"
+                type="search"
+                placeholder="Try workshops, design, careers…"
+                maxlength="100"
+              /><button class="button search-button" type="submit">
+                Search
+              </button>
+            </div>
+          </div>
+          <div class="category-field">
+            <label for="category">Category</label
+            ><select id="category">
+              <option value="">All categories</option>
+              <option>Technology</option>
+              <option>Creative</option>
+              <option>Career</option>
+              <option>Community</option>
+            </select>
+          </div>
+          <div class="category-field">
+            <label for="sort">Sort by</label
+            ><select id="sort">
+              <option value="date">Soonest first</option>
+              <option value="title">Event name</option>
+              <option value="seats">Available seats</option>
+            </select>
+          </div>
+        </form>
+        <div
+          class="category-pills"
+          role="group"
+          aria-label="Quick category filters"
+        >
+          <button class="pill selected" data-category="" aria-pressed="true">
+            All events</button
+          ><button class="pill" data-category="Technology" aria-pressed="false">
+            ⌘ &nbsp; Technology</button
+          ><button class="pill" data-category="Creative" aria-pressed="false">
+            ✳ &nbsp; Creative</button
+          ><button class="pill" data-category="Career" aria-pressed="false">
+            ↗ &nbsp; Career</button
+          ><button class="pill" data-category="Community" aria-pressed="false">
+            ◎ &nbsp; Community
+          </button>
+        </div>
+        <p id="page-status" role="status" class="page-status"></p>
+        <div id="events-grid" class="events-grid" aria-live="polite"></div>
+      </section>
+      <section class="bottom-banner">
+        <div>
+          <p class="eyebrow">A little outside your usual</p>
+          <h2>Your people are out there.<br />Go find them.</h2>
+        </div>
+        <span aria-hidden="true">✳</span>
+        <p>Small moments.<br />Big campus energy.</p>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="/"
+        >campus<span>flow</span><span class="green-text">.</span></a
+      >
+      <p>Made for campus. Built for connection.</p>
+      <span>Student project · 2026</span>
+    </footer>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <button id="close-modal" class="close" aria-label="Close dialog">
+        ×
+      </button>
+      <div id="modal-content"></div>
+    </dialog>
+    <div id="toast" role="status" class="toast" hidden></div>
+  </body>
+</html>
